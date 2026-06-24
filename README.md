@@ -7,13 +7,13 @@
 
 TypeScript port of Python's [cachetools](https://pypi.org/project/cachetools/) (60M+ downloads/month). Choose the eviction strategy that fits your use case without installing a single runtime dependency.
 
-[![npm](https://img.shields.io/npm/v/cachetools)](https://www.npmjs.com/package/cachetools)
+[![npm](https://img.shields.io/npm/v/@billdaddy/cachetools)](https://www.npmjs.com/package/@billdaddy/cachetools)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Install
 
 ```bash
-npm install cachetools
+npm install @billdaddy/cachetools
 ```
 
 ## Strategies at a glance
@@ -29,7 +29,7 @@ npm install cachetools
 ## LRUCache
 
 ```typescript
-import { LRUCache } from "cachetools";
+import { LRUCache } from "@billdaddy/cachetools";
 
 const cache = new LRUCache<string, number>({ maxSize: 100 });
 
@@ -55,7 +55,7 @@ const cache = new LRUCache<string, string>({
 ## LFUCache
 
 ```typescript
-import { LFUCache } from "cachetools";
+import { LFUCache } from "@billdaddy/cachetools";
 
 const cache = new LFUCache<string, number>({ maxSize: 3 });
 
@@ -72,7 +72,7 @@ Uses the O(1) LFU algorithm (Shah et al. 2010). Ties within the same frequency b
 ## TTLCache
 
 ```typescript
-import { TTLCache } from "cachetools";
+import { TTLCache } from "@billdaddy/cachetools";
 
 const cache = new TTLCache<string, string>({
   maxSize: 500,
@@ -92,7 +92,7 @@ Expired entries are lazily removed on access. Call `expire()` periodically if yo
 ## TLRUCache — TTL + LRU combined
 
 ```typescript
-import { TLRUCache } from "cachetools";
+import { TLRUCache } from "@billdaddy/cachetools";
 
 const cache = new TLRUCache<string, Response>({
   maxSize: 200,
@@ -109,7 +109,7 @@ Evicts by LRU on capacity overflow; entries also hard-expire after `ttl` ms.
 ## cached() — memoize any function
 
 ```typescript
-import { cached, LRUCache, TTLCache } from "cachetools";
+import { cached, LRUCache, TTLCache } from "@billdaddy/cachetools";
 
 // Sync function with LRU cache
 const lru = new LRUCache<string, number>({ maxSize: 100 });

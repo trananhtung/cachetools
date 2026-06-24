@@ -1,5 +1,5 @@
 {
-  "name": "cachetools",
+  "name": "@billdaddy/cachetools",
   "version": "0.1.0",
   "description": "Zero-dependency multi-strategy cache: LRU, LFU, TTL, TLRu (TTL+LRU). TypeScript port of Python cachetools. Decorator support for memoization.",
   "type": "module",
@@ -46,5 +46,8 @@
     "ts-jest": "^29.4.11",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "lru-cache": "^11.5.1"
   }
 }
